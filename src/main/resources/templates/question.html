@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Question</title>
+</head>
+<body>
+	<ul>
+		<li th:each="student: ${ques}"><span
+			th:text="${student.question}"> </span> <br>
+			<form>
+				<input type="radio" name="q" th:text="${student.optionA}"> <br>
+				<input type="radio" name="q" th:text="${student.optionB}"> <br>
+				<input type="radio" name="q" th:text="${student.optionC}"> <br>
+				<input type="radio" name="q" th:text="${student.optionD}"> <br>
+
+			</form></li>
+	</ul>
+	<button th:action="@{/about}" method="get">Submit</button>
+</body>
+</html>
